@@ -1,0 +1,6 @@
+# Nous gardons les fichiers de configuration et les fichiers temporaires hors du dépôt Git ici. 
+
+node_modules
+dist
+
+.env
