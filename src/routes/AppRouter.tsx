@@ -1,3 +1,4 @@
+import { tourismeRoutes } from "@/modules/tourisme/routes";
 import { useRoutes, Navigate } from "react-router-dom";
 import { PublicLayout } from "@/layouts/PublicLayout";
 import { vehiclesRoutes } from "@/modules/vehicles";
@@ -8,10 +9,9 @@ export function AppRouter() {
     {
       path: "/",
       element: <PublicLayout />,
-      children: [
-        { index: true, element: <Navigate to="/vehicles" replace /> },
+      children: [...tourismeRoutes,
+        { index: true, element: <Navigate to="/vehicules" replace /> },
         ...vehiclesRoutes,
-        { path: "vehicles/favorites", element: <Navigate to="/vehicles" replace /> },
         { path: "*", element: <NotFound /> },
       ],
     },
