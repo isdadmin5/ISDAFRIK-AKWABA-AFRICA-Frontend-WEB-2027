@@ -18,6 +18,12 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-sand-200 sm:flex">
           <NavLink
+            to="/tourisme"
+            className={({ isActive }) => clsx("hover:text-sand-50", isActive && "text-amber-400")}
+          >
+            Tourisme
+          </NavLink>
+          <NavLink
             to="/vehicles"
             end
             className={({ isActive }) => clsx("hover:text-sand-50", isActive && "text-amber-400")}
@@ -42,6 +48,9 @@ export function Header() {
       </div>
       {open && (
         <div className="border-t border-asphalt-700 px-4 py-3 sm:hidden">
+          <Link to="/tourisme" className="block py-2 text-sm text-sand-200">
+            Tourisme
+          </Link>
           <Link to="/vehicles" className="block py-2 text-sm text-sand-200">
             Catalogue
           </Link>

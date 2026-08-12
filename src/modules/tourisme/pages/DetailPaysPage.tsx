@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useMemo, useState } from "react";
 import { pays } from "../data/pays";
 import { sitesTouristiques } from "../data/sitesTouristiques";
 import { CarteSite } from "../components/CarteSite";
@@ -6,9 +7,36 @@ import { CarteSite } from "../components/CarteSite";
 export function DetailPaysPage() {
   const { paysId } = useParams<{ paysId: string }>();
   const navigate = useNavigate();
+  const [recherche, setRecherche] = useState("");
+  const [categorieActive, setCategorieActive] = useState<string>("Toutes");
 
   const paysActuel = pays.find((p) => p.id === paysId);
   const sitesDuPays = sitesTouristiques.filter((s) => s.paysId === paysId);
+
+  const categories = useMemo(() => {
+    const set = new Set<string>();
+    sitesDuPays.forEach((s) => {
+      s.categorie.split(",").forEach((c) => set.add(c.trim()));
+    });
+    return ["Toutes", ...Array.from(set).sort()];
+  }, [sitesDuPays]);
+
+  const sitesFiltres = useMemo(() => {
+    return sitesDuPays.filter((s) => {
+      const correspondCategorie =
+        categorieActive === "Toutes" ||
+        s.categorie.split(",").map((c) => c.trim()).includes(categorieActive);
+
+      const texte = recherche.trim().toLowerCase();
+      const correspondRecherche =
+        texte === "" ||
+        s.nom.toLowerCase().includes(texte) ||
+        s.ville.toLowerCase().includes(texte) ||
+        s.region.toLowerCase().includes(texte);
+
+      return correspondCategorie && correspondRecherche;
+    });
+  }, [sitesDuPays, categorieActive, recherche]);
 
   if (!paysActuel) {
     return (
@@ -61,13 +89,41 @@ export function DetailPaysPage() {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Sites touristiques ({sitesDuPays.length})
+          Sites touristiques ({sitesFiltres.length}/{sitesDuPays.length})
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {sitesDuPays.map((site) => (
-            <CarteSite key={site.id} site={site} />
-          ))}
+
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          <input
+            type="text"
+            value={recherche}
+            onChange={(e) => setRecherche(e.target.value)}
+            placeholder="Rechercher un site, une ville, une région..."
+            className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+          />
+          <select
+            value={categorieActive}
+            onChange={(e) => setCategorieActive(e.target.value)}
+            className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
         </div>
+
+        {sitesFiltres.length === 0 ? (
+          <p className="text-gray-500 italic">
+            Aucun site ne correspond à ta recherche.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {sitesFiltres.map((site) => (
+              <CarteSite key={site.id} site={site} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
