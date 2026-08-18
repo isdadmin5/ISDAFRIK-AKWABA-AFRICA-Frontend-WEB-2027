@@ -1,55 +1,38 @@
-import { Link, NavLink } from "react-router-dom";
-import { Car, Menu } from "lucide-react";
-import { useState } from "react";
-import clsx from "clsx";
+import { Link } from "react-router-dom";
+import { Globe } from "lucide-react";
+import { FIGMA } from "@/modules/hebergements/assets";
 
-// Nous gérons l'en-tête du site web, qui inclut le logo, la navigation et le menu pour les appareils mobiles.
 export function Header() {
-  const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-asphalt-700 bg-asphalt-900/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link to="/vehicles" className="flex items-center gap-2 font-display text-lg font-bold text-sand-50">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500 text-asphalt-950">
-            <Car className="h-5 w-5" />
-          </span>
-          AKWABA <span className="text-amber-500">AFRICA</span>
+    <header className="sticky top-0 z-50 h-[81px] bg-navy-900 text-white">
+      <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between px-6 lg:px-[61px]">
+        <Link to="/hebergements" className="shrink-0">
+          <img src={FIGMA.logo} alt="AKWABA AFRICA" className="size-[62px] rounded-[10px] object-cover" />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-sand-200 sm:flex">
-          <NavLink
-            to="/vehicles"
-            end
-            className={({ isActive }) => clsx("hover:text-sand-50", isActive && "text-amber-400")}
-          >
-            Catalogue
-          </NavLink>
-          <NavLink
-            to="/vehicles/favorites"
-            className={({ isActive }) => clsx("hover:text-sand-50", isActive && "text-amber-400")}
-          >
-            Mes réservations
-          </NavLink>
+        <nav className="flex items-center">
+          <Link to="/hebergements" className="text-[14px] font-medium text-brand-500">
+            Hébergements
+          </Link>
         </nav>
 
-        <button
-          className="rounded-lg p-2 text-sand-200 hover:bg-asphalt-800 sm:hidden"
-          aria-label="Ouvrir le menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <Menu className="h-5 w-5" />
-        </button>
-      </div>
-      {open && (
-        <div className="border-t border-asphalt-700 px-4 py-3 sm:hidden">
-          <Link to="/vehicles" className="block py-2 text-sm text-sand-200">
-            Catalogue
-          </Link>
-          <Link to="/vehicles/favorites" className="block py-2 text-sm text-sand-200">
-            Mes réservations
-          </Link>
+        <div className="hidden items-center gap-3 lg:flex">
+          <button type="button" className="flex items-center gap-1 text-[14px] font-medium">
+            <Globe className="size-[17px]" />
+            FR
+          </button>
+          <button
+            type="button"
+            className="flex h-[34px] w-[88px] items-center justify-center gap-1 rounded-xl bg-white/20 text-[16px] font-medium"
+          >
+            <img src={FIGMA.iconFlag} alt="" className="h-4 w-4 object-contain" />
+            TOGO
+          </button>
+          <button type="button" className="rounded-2xl bg-brand-500 px-6 py-2 text-[14px] font-medium text-navy-900">
+            Connexion
+          </button>
         </div>
-      )}
+      </div>
     </header>
   );
 }

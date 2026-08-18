@@ -5,12 +5,12 @@
 /* Nous définissons ici les variables CSS globales pour les couleurs et les styles de focus, ainsi que les styles pour la barre de défilement et les animations réduites. */
 
 :root {
-  --color-route-line: #e8a33d;
-  --focus-ring: 0 0 0 2px #12151c, 0 0 0 4px #e8a33d;
+  --color-route-line: #ff5c00;
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #ff5c00;
 }
 
 * {
-  scrollbar-color: #333b4a #12151c;
+  scrollbar-color: #1a3f6d #e2e8f0;
 }
 
 :focus-visible {

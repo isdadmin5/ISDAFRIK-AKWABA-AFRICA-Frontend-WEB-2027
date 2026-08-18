@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "@/redux/store";
 import { ToastProvider } from "@/components/Toast";
 import { ErrorBoundary } from "@/app/ErrorBoundary";
+import { BookingProvider } from "@/modules/hebergements/booking/BookingContext";
 
 //Production de Providers, Redux Provider, React Query Provider, Router, ErrorBoundary
 export function AppProviders({ children }: { children: ReactNode }) {
@@ -26,7 +27,9 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>
-            <ToastProvider>{children}</ToastProvider>
+            <BookingProvider>
+              <ToastProvider>{children}</ToastProvider>
+            </BookingProvider>
           </BrowserRouter>
         </QueryClientProvider>
       </Provider>
