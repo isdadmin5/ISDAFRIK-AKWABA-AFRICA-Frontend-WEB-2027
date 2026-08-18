@@ -1,6 +1,7 @@
+// Nous gérons ici l'affichage d'un loader avec un label
+
 import { Loader2 } from "lucide-react";
 
-// Nous gérons ici l'affichage d'un loader avec un label
 export function Loader({ label = "Chargement…" }: { label?: string }) {
   return (
     <div role="status" className="flex flex-col items-center justify-center gap-3 py-16 text-sand-400">

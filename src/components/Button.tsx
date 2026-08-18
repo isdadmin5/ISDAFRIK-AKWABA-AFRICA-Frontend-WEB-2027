@@ -1,3 +1,4 @@
+//Nous gérons ici le button réutilisable pour l'application. 
 import { ButtonHTMLAttributes, forwardRef } from "react";
 import clsx from "clsx";
 import { Loader2 } from "lucide-react";

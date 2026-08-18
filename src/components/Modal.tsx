@@ -1,8 +1,9 @@
+// Nous gérons ici l'affichage d'une modale avec titre, contenu et bouton de fermeture
+
 import { ReactNode, useEffect } from "react";
 import { X } from "lucide-react";
 import { createPortal } from "react-dom";
 
-// Nous gérons ici l'affichage d'une modale avec titre, contenu et bouton de fermeture
 export function Modal({
   open,
   onClose,

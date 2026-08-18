@@ -1,3 +1,4 @@
+// Nous gérons ici le composant de carte réutilisable pour l'application
 import { HTMLAttributes } from "react";
 import clsx from "clsx";
 

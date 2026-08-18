@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-// Nous gérons ici les badges pour afficher des statuts de disponibilité, types de véhicules…
+// Nous gérons ici les badges pour afficher des statuts de disponibilité, types de véhicules selon le cahier des charges…
 export function Badge({
   children,
   tone = "neutral",

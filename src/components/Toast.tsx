@@ -1,8 +1,10 @@
+// Nous gérons ici l'affichage de notifications toast 
+// pour informer l'utilisateur de succès, erreurs ou informations
+
 import { createContext, useCallback, useContext, useState, ReactNode } from "react";
 import { CheckCircle2, XCircle, Info } from "lucide-react";
 import clsx from "clsx";
 
-// Nous gérons ici l'affichage de notifications toast pour informer l'utilisateur de succès, erreurs ou informations
 type ToastKind = "success" | "error" | "info";
 interface ToastItem {
   id: number;

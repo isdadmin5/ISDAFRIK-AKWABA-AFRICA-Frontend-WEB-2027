@@ -1,8 +1,9 @@
+// Nous gérons ici la barre de recherche pour filtrer les véhicules
+// Implémentation simplifiée, conforme au contrat de props d'un futur composant barre de recherche graphique (mêmes noms de champs).
+
 import { useState } from "react";
 import { Search } from "lucide-react";
 
-// Nous gérons ici la barre de recherche pour filtrer les véhicules
-// Implémentation simplifiée, conforme au contrat de props d'un futur composant barre de recherche graphique (mêmes noms de champs).
 export function SearchBar({
   placeholder = "Ville, aéroport, agence…",
   onSearch,

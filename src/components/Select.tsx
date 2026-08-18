@@ -1,7 +1,7 @@
+// Nous gérons ici la sélection d'options dans un menu déroulant, avec label et message d'erreur
+
 import { SelectHTMLAttributes, forwardRef } from "react";
 import clsx from "clsx";
-
-// Nous gérons ici la sélection d'options dans un menu déroulant, avec label et message d'erreur
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   error?: string;

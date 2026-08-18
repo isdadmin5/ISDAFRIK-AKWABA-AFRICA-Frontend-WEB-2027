@@ -1,3 +1,2 @@
-// Nous gérons ici le point d'entrée public du module location de véhicules dans ce fichier.
+// Nous gérons ici le point d'entrée public du module location de véhicules dans ce fichier selon le cahier des charges
 
-// TODO : à coder par vous ✍️

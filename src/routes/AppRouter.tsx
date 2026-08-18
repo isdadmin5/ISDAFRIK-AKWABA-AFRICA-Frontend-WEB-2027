@@ -1,6 +1,6 @@
 import { useRoutes, Navigate } from "react-router-dom";
 import { PublicLayout } from "@/layouts/PublicLayout";
-import { vehiclesRoutes } from "@/modules/vehicles";
+import { vehiclesRoutes } from "@/modules/vehicles/routes/vehicles.routes";
 
 // Nous définissons ici le routeur principal de l'application, qui gère les routes publiques et les routes spécifiques au module "Location de Véhicules".
 export function AppRouter() {

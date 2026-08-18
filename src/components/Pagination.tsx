@@ -1,8 +1,9 @@
+// Nous gérons ici la pagination pour naviguer entre les pages de résultats
+// Implémentation simplifiée, conforme au contrat de props d'un futur composant pagination graphique (mêmes noms de champs).
+
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Nous gérons ici la pagination pour naviguer entre les pages de résultats
-// Implémentation simplifiée, conforme au contrat de props d'un futur composant pagination graphique (mêmes noms de champs).
 export function Pagination({
   page,
   totalPages,

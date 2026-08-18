@@ -1,8 +1,9 @@
-import { Input } from "./Input";
-
 // Nous gérons ici la sélection de dates
 // Implémentation simplifiée en date-range native, conforme au contrat de props
 // d'un futur composant calendrier graphique (mêmes noms de champs).
+
+import { Input } from "./Input";
+
 export function DateRangePicker({
   startDate,
   endDate,

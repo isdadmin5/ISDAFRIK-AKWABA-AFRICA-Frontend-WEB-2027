@@ -24,7 +24,7 @@ httpClient.interceptors.request.use((config) => {
 httpClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Nous gérons ici les erreurs de réponse HTTP, en journalisant les détails en mode développement et en rejetant la promesse pour permettre une gestion ultérieure.
+    // Nous gérons ici les erreurs de réponse HTTPS, en journalisant les détails en mode développement et en rejetant la promesse pour permettre une gestion ultérieure.
     if (import.meta.env.DEV) {
       // eslint-disable-next-line no-console
       console.error("[API ERROR]", error?.response?.data || error.message);

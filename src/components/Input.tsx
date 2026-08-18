@@ -1,7 +1,8 @@
+// Nous gérons ici la saisie de texte, avec label et message d'erreur
+
 import { InputHTMLAttributes, forwardRef } from "react";
 import clsx from "clsx";
 
-// Nous gérons ici la saisie de texte, avec label et message d'erreur
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;

@@ -1,3 +1,4 @@
+// Nous gérons ici la galerie d'images réutilisable pour l'application
 import { useState } from "react";
 import clsx from "clsx";
 
