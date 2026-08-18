@@ -43,7 +43,7 @@ export default {
         danger: "#E5574B",
       },
       fontFamily: {
-        display: ["'Poppins'", "sans-serif"],
+        display: ["'Poppins'", "'Space Grotesk'", "sans-serif"],
         body: ["'Poppins'", "'Be Vietnam Pro'", "'Inter'", "sans-serif"],
         vietnam: ["'Be Vietnam Pro'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
