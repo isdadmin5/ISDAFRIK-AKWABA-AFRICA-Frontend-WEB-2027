@@ -1,17 +1,16 @@
 import { useRoutes, Navigate } from "react-router-dom";
 import { PublicLayout } from "@/layouts/PublicLayout";
-import { vehiclesRoutes } from "@/modules/vehicles";
+import { restaurantRoutes } from "@/modules/restaurant";
 
-// Nous définissons ici le routeur principal de l'application, qui gère les routes publiques et les routes spécifiques au module "Location de Véhicules".
+// Nous définissons ici le routeur principal de l'application, qui gère les routes publiques et les routes du module Restaurants.
 export function AppRouter() {
   return useRoutes([
     {
       path: "/",
       element: <PublicLayout />,
       children: [
-        { index: true, element: <Navigate to="/vehicles" replace /> },
-        ...vehiclesRoutes,
-        { path: "vehicles/favorites", element: <Navigate to="/vehicles" replace /> },
+        { index: true, element: <Navigate to="/restaurants" replace /> },
+        ...restaurantRoutes,
         { path: "*", element: <NotFound /> },
       ],
     },
