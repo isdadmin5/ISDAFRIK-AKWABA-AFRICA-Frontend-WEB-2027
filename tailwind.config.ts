@@ -32,8 +32,8 @@ export default {
         danger: "#E5574B",
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
+        display: ["'Poppins'", "'Space Grotesk'", "sans-serif"],
+        body: ["'Poppins'", "'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
       backgroundImage: {
