@@ -1,12 +1,23 @@
 import type { Config } from "tailwindcss";
 
-// Design tokens - Module Location de Véhicules AKWABA AFRICA
-// Palette "route de nuit" : asphalte profond + ambre phare + turquoise disponibilité
+// Design tokens AKWABA AFRICA
+// Hébergements (maquette) : navy + orange brand ; legacy véhicules : asphalt / amber / route
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
+        navy: {
+          950: "#07111F",
+          900: "#0D1B3D",
+          800: "#123056",
+          700: "#1A3F6D",
+        },
+        brand: {
+          400: "#FF7A33",
+          500: "#FF5C00",
+          600: "#E55200",
+        },
         asphalt: {
           950: "#0D1016",
           900: "#12151C",
@@ -32,8 +43,9 @@ export default {
         danger: "#E5574B",
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
+        display: ["'Poppins'", "sans-serif"],
+        body: ["'Poppins'", "'Be Vietnam Pro'", "'Inter'", "sans-serif"],
+        vietnam: ["'Be Vietnam Pro'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
       backgroundImage: {
